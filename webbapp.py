@@ -4,7 +4,7 @@ import numpy as np
 import math
 #def main():
 
-st.title("Spontaneous Parametric Down-Conversion (SPDC) Simulator")
+st.title("Spontaneous Parametric Down-Conversion (SPDC) Simulator ")
 
 
 
@@ -123,9 +123,8 @@ st.write('For further details of the SPDC process please read the following arti
 st.write("Phase matching in β-barium borate crystals for spontaneous parametric down-conversion; S. Karan, S. Aarav, H. Bharadhwaj, L. Taneja, A. De, G. Kulkarni, N. Meher, and A. K. Jha; [Journal of Optics 22, 083501 (2020)](https://iopscience.iop.org/article/10.1088/2040-8986/ab89e4/meta).")
 
 st.write('Design & Developed by:') 
-st.write("Suman Karan from [Quantum Optics and Entanglement Lab, IIT Kanpur ](http://home.iitk.ac.in/~akjha/people.html)")
+st.write("Anshul Dhanka")
 
+st.write("Indian Institute of Technology Madras")
+st.write("Department of physics")
 
-
-#if __name__== '__main__':
-#    main()
