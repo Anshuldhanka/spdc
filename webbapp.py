@@ -9,8 +9,8 @@ st.title("Spontaneous Parametric Down-Conversion (SPDC) Simulator ")
 
 
 #st.image("spdc_diagram.PNG",width=400,caption='Diagram of SPDC set up')
-#st.sidebar.image("spdc_diagram.PNG")
-#st.sidebar.image("spdc_diagram.PNG",width=310)
+#st.sidebar.image("spdc1.PNG")
+#st.sidebar.image("spdc1.PNG",width=310)
 #st.image("https://drive.google.com/file/d/1lktC_ilHUILRbJFqZH9o6vM3i6RBX6au/view?usp=sharing")
 url = ' https://drive.google.com/file/d/1lktC_ilHUILRbJFqZH9o6vM3i6RBX6au/view?usp=sharing'
 path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
