@@ -8,10 +8,7 @@ st.title("Spontaneous Parametric Down-Conversion (SPDC) Simulator ")
 
 
 
-#st.image("spdc_diagram.PNG",width=400,caption='Diagram of SPDC set up')
-#st.sidebar.image("spdc1.PNG")
-#st.sidebar.image("spdc1.PNG",width=310)
-#st.image("https://drive.google.com/file/d/1lktC_ilHUILRbJFqZH9o6vM3i6RBX6au/view?usp=sharing")
+
 url = ' https://drive.google.com/file/d/1lktC_ilHUILRbJFqZH9o6vM3i6RBX6au/view?usp=sharing'
 path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
 st.sidebar.image(path, width=310)
@@ -28,22 +25,20 @@ wavep = 0.001*wavep  # wavelength of pump field in um
 thetap = np.radians(thetap)  # thetap in radians 28.649
 
 
-# *******Dispersion relation o ray***************
+
 def noo(n):
     global wavep
     n2 = 2.7405 + ((0.0184) / ((n ** 2) - 0.0179)) - (0.0155 * n ** 2)
     rio = round(math.sqrt(n2), 4)
     return rio
-    # ********Dispersion relation e ray***************
+ 
 
 def neo(n):
     global wavep
     n2 = 2.3730 + ((0.0128) / ((n ** 2) - 0.0156)) - (0.0044 * n ** 2)
     rio = round(math.sqrt(n2), 4)
     return rio
-    #############################################
-    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#####Two photon wavefunction##############
+   
 
 def two_photon_wavefunction(xs,ys,xi,yi,wp):
     global L, distz,alphap,betap,gammap,alphas,betas,gammas,alphai,betai,gammai
@@ -88,14 +83,14 @@ betas = (nos * nes) / dens
 gammas = nos / np.sqrt(dens)
 etas = nes * gammas
 nobar = noo(2*wavep)
-###etapp = (no*ne)/math.sqrt(den)
 
-#########For wavefunction(e --> oo) ###################
+
+
 
 funcmat=np.zeros([grdpnt,grdpnt])
 for k in np.arange(-5,5):
   for m in np.arange(-5,5):
-#////////////////////////////////////////////////////////
+
       noi = noo(2*wavep)
       nei = neo(2*wavep)
       thetai= thetap + np.arctan2(-ys + m*dx,-xs + k*dx)
@@ -105,7 +100,7 @@ for k in np.arange(-5,5):
       gammai = noi / np.sqrt(deni)
       etai = nei * gammai
       nobar = noo(2 * wavep)
-#88888888888888__________________----************************//////////////////////
+
       funcmat=funcmat+ (np.square(np.absolute(two_photon_wavefunction(xs,ys,-xs+ k*dx,-ys+ m*dx, wp))))*dx*dx
 
 
@@ -115,16 +110,13 @@ for k in np.arange(-5,5):
   
 #col2.image("spdc_diagram.PNG",width=400,caption='Diagram of SPDC set up')
 
-st.subheader('Singles Intensity:')
+st.subheader('simulated rings formed by down-converted photons')
 
 fig= px.imshow(funcmat,0.00005,0.00038 )
 st.plotly_chart(fig)
-st.write('For further details of the SPDC process please read the following article:')
-st.write("Phase matching in β-barium borate crystals for spontaneous parametric down-conversion; S. Karan, S. Aarav, H. Bharadhwaj, L. Taneja, A. De, G. Kulkarni, N. Meher, and A. K. Jha; [Journal of Optics 22, 083501 (2020)](https://iopscience.iop.org/article/10.1088/2040-8986/ab89e4/meta).")
 
-st.write('Design & Developed by:') 
+st.write('-->Design & Developed by:') 
 st.write("Anshul Dhanka")
-
 st.write("Indian Institute of Technology Madras")
-st.write("Department of physics")
+st.write("Department of Physics")
 
