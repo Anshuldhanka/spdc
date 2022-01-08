@@ -76,7 +76,7 @@ nobar = noo(2 * wavep)
 #------------------8888888888888------------------------
 nos = noo(2*wavep)
 nes = neo(2*wavep)
-thetas= thetap - np.arctan2(ys,xs)
+#thetas= thetap - np.arctan2(ys,xs)
 dens = np.square(nos * np.sin(thetap)) + np.square(nes * np.cos(thetap))
 alphas = ((np.square(nos) - np.square(nes)) * (np.sin(thetap)) * (np.cos(thetap))) / dens
 betas = (nos * nes) / dens
@@ -93,7 +93,7 @@ for k in np.arange(-5,5):
 
       noi = noo(2*wavep)
       nei = neo(2*wavep)
-      thetai= thetap + np.arctan2(-ys + m*dx,-xs + k*dx)
+     # thetai= thetap + np.arctan2(-ys + m*dx,-xs + k*dx)
       deni = np.square(noi * np.sin(thetap)) + np.square(nei * np.cos(thetap))
       alphai = ((np.square(noi) - np.square(nei)) * (np.sin(thetap)) * (np.cos(thetap))) / deni
       betai = (noi * nei) / deni
